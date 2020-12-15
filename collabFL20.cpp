@@ -25,6 +25,7 @@ void menu6Dominguez();
 void menu22Turcios();
 void menu21Tourkakis();
 void menu8Fuentes();
+void menu11Harerimana();
 
 // ***************************************************************
 // END OF FUNCTION PROTOTYPE AREA
@@ -79,7 +80,8 @@ int main()
                 break;
             case 10:                 // Guerrero Rivas - call to function goes here
                 break;
-            case 11:                 // Harerimana - call to function goes here
+            case 11: 
+	            menu11Harerimana();  // Harerimana - call to function goes here
                 break;
             case 12:                 // McNary - call to function goes here
                 break;
@@ -417,3 +419,37 @@ void menu8Fuentes()
                                                                             // of polygon
     cout << "The area of your polygon is " << area << " square units" << endl;
 }
+// *****************************************************************************************
+//MENU ID:   11
+//FUNCTION:   menu11Harerimana
+//DESCRIPTION: This program asks for five test score and display the avarage of it 
+// OUTPUT EXAMPLE:Enter 5 grades , separated by space ,press enter when done 
+//6 8 9 6 4
+//Avarage : 6.6
+
+// *****************************************************************************************
+void menu11Harerimana();
+
+int main() 
+{
+	const int NUM_SCORES = 5;  // how many scores we're averaging
+	float score;               // holds a test score
+	float avg{};                 // average of all scores
+	
+	// gather user input and accumulate the scores
+	cout << "Enter " << NUM_SCORES
+	     << " grades, separated by spaces, pressing enter when done.\n";
+	for ( int i = 0; i < NUM_SCORES; i++ ) {
+		cin >> score;  // store the value
+		avg += score;  // accumulate to total scores
+	}
+	avg /= NUM_SCORES; // divide by number of scores to get avg
+	
+	// output the result
+	cout << "Average: " << fixed << showpoint << setprecision(1)
+	     << avg << endl;	
+	return 0;
+}
+
+
+
